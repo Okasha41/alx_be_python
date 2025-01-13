@@ -9,14 +9,16 @@ def convert_to_fahrenheit(celsius):
     fahrenheit = celsius * CELSIUS_TO_FAHRENHEIT_FACTOR
     return fahrenheit
 
-temprature = float(input('Enter the temprature: '))
-temprature_type = input("Specify whether it’s in Celsius or Fahrenheit.")
+temprature = float(input('Enter the temperature to convert'))
+temprature_type = input("Is this temperature in Celsius or Fahrenheit? (C/F): ")
 
 if type(temprature) != 'float':
     print('You entered invalid temprature')
-elif temprature_type == "Celsius":
+elif temprature_type != "F" and temprature_type != "C":
+    print('You entered invalid temprature type')
+elif temprature_type == "C":
     converter_tem = convert_to_fahrenheit(temprature)
-    print(f"Your temprature converted to Fahrenheit = {converter_tem}")
-elif temprature_type == "Fahrenheit":
+    print(f"{temprature}°C is {converter_tem}°F")
+elif temprature_type == "F":
     converter_tem = convert_to_celsius(temprature)
-    print(f"Your temprature converted to Celsius = {converter_tem}")
+    print(f"{temprature}°F is {converter_tem}°C")
