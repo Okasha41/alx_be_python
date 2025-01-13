@@ -24,7 +24,7 @@ def main():
         # Handle the choices
         if choice == '1':
             # Add an item
-            item = input("Enter the item to add:").strip()
+            item = input('Enter the item to add: ')
             shopping_list.append(item)
             print(f"'{item}' has been added to the shopping list.")
         elif choice == '2':
