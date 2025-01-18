@@ -31,19 +31,17 @@ class Library:
     def check_out_book(self, title):
         for book in self._books:
             if book.title == title and book.is_available():
-                if book.check_out():
-                    print(f"Checked out: {title}")
-                    return
-                break
+                book.check_out()
+                print(f"Checked out: {title}")
+                return
         print(f"The book '{title}' is not available for checkout.")
 
     def return_book(self, title):
         for book in self._books:
             if book.title == title and not book.is_available():
-                if book.return_book():
-                    print(f"Returned: {title}")
-                    return
-                break
+                book.return_book()
+                print(f"Returned: {title}")
+                return
         print(f"The book '{title}' is not available for return.")
 
     def list_available_books(self):
